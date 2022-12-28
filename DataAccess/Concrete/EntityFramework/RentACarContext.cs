@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Concrete
+namespace DataAccess.Concrete.EntityFramework
 {
     public class RentACarContext : DbContext
     {
@@ -18,5 +18,6 @@ namespace DataAccess.Concrete
         public DbSet<Car> Cars { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Brand> Brands { get; set; }
+
     }
 }
