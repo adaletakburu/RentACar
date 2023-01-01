@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -17,27 +20,28 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
+        [ValidationAspect(typeof(UserValidator))]
         public IResult Add(User user)
         {
             _userDal.Add(user);
-            return new SuccessResult("User added.");
+            return new SuccessResult(Messages.Added);
         }
 
         public IResult Delete(User user)
         {
             _userDal.Add(user);
-            return new SuccessResult("User deleted.");
+            return new SuccessResult(Messages.Deleted);
         }
 
         public IDataResult<List<User>> GetAll()
         {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(), "User listed.");
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.Listed);
         }
 
         public IResult Update(User user)
         {
             _userDal.Add(user);
-            return new SuccessResult("User updated.");
+            return new SuccessResult(Messages.Updated);
         }
     }
 }
