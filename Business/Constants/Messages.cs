@@ -13,5 +13,10 @@ namespace Business.Constants
         public static string Deleted = "Deleted.";
         public static string Updated = "Updated.";
         public static string Listed = "Listed.";
+        internal static string CarImageAdded;
+        internal static string CarImageDeleted;
+        internal static string CarImageLimitExceded;
+        internal static string CarImageUpdated;
+        internal static string CarImagesListed;
     }
 }
