@@ -9,12 +9,12 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        IUserService _userService;
+         /*IUserService _userService;
         public UsersController(IUserService userService)
         {
             _userService = userService;
         }
-
+       
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -48,6 +48,6 @@ namespace WebAPI.Controllers
             if (result.Success)
                 return Ok(result);
             return BadRequest(result);
-        }
+        }*/
     }
 }
