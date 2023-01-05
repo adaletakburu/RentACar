@@ -39,7 +39,7 @@ namespace Business.Concrete
 
         }
 
-        [CacheAspect]
+        
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.Listed);
@@ -59,7 +59,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == id), Messages.Listed);
         }
-        [CacheRemoveAspect("IProductService.GetAll")]
+        
         public IResult Update(Car car)
         {
             _carDal.Update(car);
